@@ -24,14 +24,14 @@ public class MyRestAssure {
     @Test
     public void Login() throws ConfigurationException {
         RestAssured.baseURI="https://dmoney.roadtocareer.net";
-        Response response = given().contentType("application/json").body("{\n" +
+        Response res = given().contentType("application/json").body("{\n" +
                 "  \"email\": \"admin@roadtocareer.net\",\n" +
                 "  \"password\": \"1234\"\n" +
                 "}").when().post("/user/login");
-        System.out.println(response.asString());
+        System.out.println(res.asString());
 
         //Extract value from json object -- using jsonPath
-        JsonPath jsonObj = response.jsonPath();
+        JsonPath jsonObj = res.jsonPath();
         String token = jsonObj.get("token");
         System.out.println(token);
 
