@@ -7,10 +7,10 @@ import java.util.Properties;
 import static io.restassured.RestAssured.given;
 
 public class UserController {
-    Properties prop;
+    Properties prop; //global prop
 
-    public void UserController(Properties prop) {
-        this.prop = prop;
+    public UserController(Properties prop) {
+        this.prop = prop; //this has done so that test runner class prop save into global prop
     }
 
     public Response doLogin(UserModel userModel) {
