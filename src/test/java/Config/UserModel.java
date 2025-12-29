@@ -1,3 +1,5 @@
+package Config;
+
 public class UserModel {
     private String email;
     private String password;
@@ -56,6 +58,7 @@ public class UserModel {
     public void setRole(String role) {
         this.role = role;
     }
+
 
     public UserModel(){
 

@@ -1,7 +1,9 @@
+package Controller;
+
+import Config.UserModel;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-import java.io.IOException;
 import java.util.Properties;
 
 import static io.restassured.RestAssured.given;

@@ -1,3 +1,8 @@
+package TestRunner;
+
+import Config.Setup;
+import Config.UserModel;
+import Controller.UserController;
 import Utils.Utils;
 import com.github.javafaker.Faker;
 import io.restassured.path.json.JsonPath;
