@@ -5,6 +5,7 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 
 public class Utils {
     public static void setEnv(String key, String value) throws ConfigurationException {
+// always sensitive information saved into config file - here token is a sensitive info that's why it save in config file.
         PropertiesConfiguration config = new PropertiesConfiguration("./src/test/resources/config.properties");
         config.setProperty(key, value);
         config.save();

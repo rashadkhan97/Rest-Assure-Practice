@@ -16,7 +16,7 @@ public class Setup {
         prop.load(fs);
     }
 
-    // After Method is used for - Once all process done it will reload the prop and the prop will store and use new information not the previous ones
+// After Method is used for - Once all process done it will reload the prop and the prop will store and use new information not the previous ones
     @AfterMethod
     public void reload() throws IOException {
         prop = new Properties();

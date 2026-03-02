@@ -9,12 +9,20 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.commons.configuration.ConfigurationException;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class UserTestRunner extends Setup {
+    UserController userController;
+
+    @BeforeClass
+    public void myUserController(){
+        userController = new UserController(prop);
+    }
+
+
     @Test(priority = 1, description = "user login")
     public void doLogin() throws ConfigurationException {
-        UserController userController = new UserController(prop);
         UserModel userModel = new UserModel();
         userModel.setEmail("admin@dmoney.com");
         userModel.setPassword("1234");
@@ -31,7 +39,6 @@ public class UserTestRunner extends Setup {
 
     @Test(priority = 2, description = "Create User")
     public void createUser() throws ConfigurationException {
-        UserController userController = new UserController(prop);
         UserModel userModel = new UserModel();
         Faker faker = new Faker();
         userModel.setName(faker.name().fullName());
@@ -64,7 +71,6 @@ public class UserTestRunner extends Setup {
 
     @Test(priority = 3, description = "Search User By Id")
     public void searchUserById() throws ConfigurationException {
-        UserController userController = new UserController(prop);
         Response res = userController.searchUsers(prop.getProperty("userId"));
         System.out.println(res.asString());
 

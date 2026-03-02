@@ -25,7 +25,7 @@ public class MyRestAssure {
     public void Login() throws ConfigurationException {
         RestAssured.baseURI="https://dmoney.roadtocareer.net";
         Response res = given().contentType("application/json").body("{\n" +
-                "  \"email\": \"admin@roadtocareer.net\",\n" +
+                "  \"email\": \"admin@dmoney.com\",\n" +
                 "  \"password\": \"1234\"\n" +
                 "}").when().post("/user/login");
         System.out.println(res.asString());
@@ -46,7 +46,7 @@ public class MyRestAssure {
 
         RestAssured.baseURI="https://dmoney.roadtocareer.net";
         Response res=given().contentType("application/json").header("Authorization", "bearer "+prop.getProperty("token"))
-                .when().get("/user/search/id/98821");
+                .when().get("/user/search/id/102895");
         System.out.println(res.asString());
 
     }
